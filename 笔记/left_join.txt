@@ -1,0 +1,2 @@
+
+left join 是 left outer join 的简写，left join 默认是 outer 属性的。

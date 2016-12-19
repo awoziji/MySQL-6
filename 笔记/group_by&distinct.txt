@@ -1,0 +1,4 @@
+
+ group by 比 distinct 快。
+ 因此使用的时候建议选 group by
+

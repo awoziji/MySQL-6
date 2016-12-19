@@ -1,0 +1,10 @@
+
+COUNT(*) 
+包括对值为NULL的统计
+
+COUNT(column) 
+不包括对值为NULL的统计
+
+COUNT(1) 
+和count(*)一样
+
