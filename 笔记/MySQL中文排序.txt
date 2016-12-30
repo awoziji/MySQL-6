@@ -1,0 +1,4 @@
+
+
+select * from mytable order by CONVERT(chineseColumnName USING gbk); 
+
