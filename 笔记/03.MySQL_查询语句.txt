@@ -1,32 +1,32 @@
---ÏÈ½øÈëmysqlÄ¿Â¼
+--å…ˆè¿›å…¥mysqlç›®å½•
 cd mysql
 cd bin
 
---°²×°MySQL·şÎñ
+--å®‰è£…MySQLæœåŠ¡
 mysqld --install mysql
 
---¿ªÆô·şÎñ
+--å¼€å¯æœåŠ¡
 net start mysql
 
---¹Ø±Õ·şÎñ
+--å…³é—­æœåŠ¡
 net stop mysql
 
---ÒÆ³ı·şÎñ
+--ç§»é™¤æœåŠ¡
 mysqld --remove mysql
 
---Á¬½Ó·şÎñ
-mysql -h202.0.0.1 -uroot -p (Ô¶³Ì)
-mysql -hlocalhost -uroot -p (±¾»ú)
+--è¿æ¥æœåŠ¡
+mysql -h202.0.0.1 -uroot -p (è¿œç¨‹)
+mysql -hlocalhost -uroot -p (æœ¬æœº)
 mysql -uroot -p
 mysql -uroot
 
---ÍË³ö·şÎñ
-quit»òexit
+--é€€å‡ºæœåŠ¡
+quitæˆ–exit
 
---²é¿´×Ö·û±àÂë
+--æŸ¥çœ‹å­—ç¬¦ç¼–ç 
 show variables like 'char%'
 
---ÉèÖÃ±àÂë
+--è®¾ç½®ç¼–ç 
 set character_set_database=utf8
 
 set character_set_client=utf8;
@@ -37,113 +37,113 @@ set character_set_results=utf8;
 set character_set_server=utf8;
 
 
---²é¿´mysql°æ±¾
+--æŸ¥çœ‹mysqlç‰ˆæœ¬
 select version()
 
---²éÑ¯mysqlÓÃ»§ĞÅÏ¢
+--æŸ¥è¯¢mysqlç”¨æˆ·ä¿¡æ¯
 select host,user,password from mysql.user
 
---ÉèÖÃrootÕËºÅµÄÃÜÂë
+--è®¾ç½®rootè´¦å·çš„å¯†ç 
 set password=password('123');
 set password=password('');
 
---¸ü»»sqlÓï¾äµÄ½áÊø·û
+--æ›´æ¢sqlè¯­å¥çš„ç»“æŸç¬¦
 delimiter //
 
---ÏÔÊ¾ËùÓĞÊı¾İ¿â
+--æ˜¾ç¤ºæ‰€æœ‰æ•°æ®åº“
 show databases
 
---ÇĞ»»Ä³¸öÊı¾İ¿â
+--åˆ‡æ¢æŸä¸ªæ•°æ®åº“
 use student
 
---ÏÔÊ¾ËùÓĞ±í
+--æ˜¾ç¤ºæ‰€æœ‰è¡¨
 show tables
 
---Ö´ĞĞsqlÎÄ¼ş
-source c:\a.sql(×¢£ººó±ß²»Òª·ÖºÅ£¡)
+--æ‰§è¡Œsqlæ–‡ä»¶
+source c:\a.sql(æ³¨ï¼šåè¾¹ä¸è¦åˆ†å·ï¼)
 
---½¨¿â
+--å»ºåº“
 create database if not exists student default character set utf8
---É¾¿â
+--åˆ åº“
 drop database if exists student
---ÏÔÊ¾½¨¿âµÄ±ê×¼Óï¾ä
+--æ˜¾ç¤ºå»ºåº“çš„æ ‡å‡†è¯­å¥
 show create database student
---½¨Ò»¸öÌØÊâÊı¾İ¿â
-create database `database` (SQL ServerÎª:create database [database])
---Ñ¡ÔñÊı¾İ¿â
+--å»ºä¸€ä¸ªç‰¹æ®Šæ•°æ®åº“
+create database `database` (SQL Serverä¸º:create database [database])
+--é€‰æ‹©æ•°æ®åº“
 use student
 
---½¨±í
+--å»ºè¡¨
 create table stuinfo
 (
    id int primary key auto_increment,
    sno varchar(10) not null unique
 );
---ÏÔÊ¾½¨±íµÄ±ê×¼´úÂë
+--æ˜¾ç¤ºå»ºè¡¨çš„æ ‡å‡†ä»£ç 
 show create table stuinfo
 
---MySqlÖĞ³£ÓÃµÄÊıÖµÀàĞÍ:
-->ÕûĞÍ:bit¡¢tinyint¡¢smallint¡¢int¡¢bigint
-->¸¡µãĞÍ:¡¢decimal(7,2)±íÊ¾7Î»Êı×Ö£¬ÆäÖĞĞ¡ÊıÕ¼2Î»¡¢numeric(m,d)
-->ÈÕÆÚ:datetime¡¢date(×¢£ºÖ»ÓĞÈÕÆÚ)¡¢time(×¢£ºÖ»ÓĞÊ±¼ä)¡¢timestamp(¿ÉÓÃdefault now())
-->×Ö·û´®:char(n)-> ¶¨³¤,varchar(n) -> ±ä³¤,text
-->¶ş½øÖÆ:blob
+--MySqlä¸­å¸¸ç”¨çš„æ•°å€¼ç±»å‹:
+->æ•´å‹:bitã€tinyintã€smallintã€intã€bigint
+->æµ®ç‚¹å‹:ã€decimal(7,2)è¡¨ç¤º7ä½æ•°å­—ï¼Œå…¶ä¸­å°æ•°å 2ä½ã€numeric(m,d)
+->æ—¥æœŸ:datetimeã€date(æ³¨ï¼šåªæœ‰æ—¥æœŸ)ã€time(æ³¨ï¼šåªæœ‰æ—¶é—´)ã€timestamp(å¯ç”¨default now())
+->å­—ç¬¦ä¸²:char(n)-> å®šé•¿,varchar(n) -> å˜é•¿,text
+->äºŒè¿›åˆ¶:blob
 
---MySqlÊı¾İ¿âÄÚÖÃ¼ÓÃÜ·½Ê½£º
-->1.password('pwd');-----41Î»
-->2.md5('pwd');-----32Î»(ÒÑ¹ıÊ±)
-->3.sha('pwd')»òsha1('pwd');------40Î»
-Àı:
+--MySqlæ•°æ®åº“å†…ç½®åŠ å¯†æ–¹å¼ï¼š
+->1.password('pwd');-----41ä½
+->2.md5('pwd');-----32ä½(å·²è¿‡æ—¶)
+->3.sha('pwd')æˆ–sha1('pwd');------40ä½
+ä¾‹:
 select md5('123');
 select length(md5('123'));
 
---ĞŞ¸Ä±íÃû£¨½«t±í¸ÄÎªteacher£©
+--ä¿®æ”¹è¡¨åï¼ˆå°†tè¡¨æ”¹ä¸ºteacherï¼‰
 rename table t to teacher
 
---ĞŞ¸ÄÁĞÃû¼°Êı¾İÀàĞÍ£¨½«tÁĞ¸ÄÎªid£¬Êı¾İÀàĞÍÉèÖÃÎªchar£©
+--ä¿®æ”¹åˆ—ååŠæ•°æ®ç±»å‹ï¼ˆå°†tåˆ—æ”¹ä¸ºidï¼Œæ•°æ®ç±»å‹è®¾ç½®ä¸ºcharï¼‰
 alter table teacher change t id char(10) 
---ĞŞ¸ÄÁĞµÄÊı¾İÀàĞÍ£¨½«aÁĞ¸ÄÎªvarcharĞÍ£©
+--ä¿®æ”¹åˆ—çš„æ•°æ®ç±»å‹ï¼ˆå°†aåˆ—æ”¹ä¸ºvarcharå‹ï¼‰
 alter table teacher modify a vachar(10)
-×¢£ºchange¿ÉÍ¬Ê±ĞŞ¸ÄÁĞÃûºÍÊı¾İÀàĞÍ£¬modifyÖ»ÄÜĞŞ¸ÄÊı¾İÀàĞÍ¡£
+æ³¨ï¼šchangeå¯åŒæ—¶ä¿®æ”¹åˆ—åå’Œæ•°æ®ç±»å‹ï¼Œmodifyåªèƒ½ä¿®æ”¹æ•°æ®ç±»å‹ã€‚
 
---Ôö¼ÓÁĞ£¨ÔÚtableÁĞÖĞÔö¼ÓageÁĞ£¬ÀàĞÍÎªtinyint£©
+--å¢åŠ åˆ—ï¼ˆåœ¨tableåˆ—ä¸­å¢åŠ ageåˆ—ï¼Œç±»å‹ä¸ºtinyintï¼‰
 alter table teacher add age tinyint
---Í¬Ê±Ôö¼Ó¶àÁĞ
+--åŒæ—¶å¢åŠ å¤šåˆ—
 alter table teacherinfo add(tname varchar(10),tage tinyint);
 
---É¾³ıÁĞ
+--åˆ é™¤åˆ—
 alter table teacher drop age
 
--ÉèÖÃÖ÷¼ü PK
+-è®¾ç½®ä¸»é”® PK
 alter table teacher add constraint primary key(id)
---É¾³ıÖ÷¼ü
+--åˆ é™¤ä¸»é”®
 alter table teacher drop primary key
 
---²é¿´±í½á¹¹
+--æŸ¥çœ‹è¡¨ç»“æ„
 desc teacher
 
---½¨Á¢Ò»¸öÍâ¼ü FK
+--å»ºç«‹ä¸€ä¸ªå¤–é”® FK
 alter table teacher add constraint foreign key(tid) references t(id);
 
---½¨Á¢Î¨Ò»Ô¼Êø
+--å»ºç«‹å”¯ä¸€çº¦æŸ
 alter table teacher add [constraint] unique (name);
 
---½á¹ûÉ¾³ıËùÓĞ¼ÇÂ¼
-delete from student;£¨ÖğÌõÉ¾³ı£¬Èç¹ûÈ«²¿É¾³ıµÄ»°£¬Ğ§ÂÊÓĞµãÂı£©
-¿ÉÒÔÕâÑù: delete from stuinfo where 1=1;(Ò»ÏÂ×ÓÈ«²¿É¾³ı)
-»ò
-truncate table student(×¢:Ê¹ÓÃtruncateÓï¾äÊ±²»»áÒı·¢´¥·¢Æ÷);
+--ç»“æœåˆ é™¤æ‰€æœ‰è®°å½•
+delete from student;ï¼ˆé€æ¡åˆ é™¤ï¼Œå¦‚æœå…¨éƒ¨åˆ é™¤çš„è¯ï¼Œæ•ˆç‡æœ‰ç‚¹æ…¢ï¼‰
+å¯ä»¥è¿™æ ·: delete from stuinfo where 1=1;(ä¸€ä¸‹å­å…¨éƒ¨åˆ é™¤)
+æˆ–
+truncate table student(æ³¨:ä½¿ç”¨truncateè¯­å¥æ—¶ä¸ä¼šå¼•å‘è§¦å‘å™¨);
 
---ÁĞ±ğÃû
-select stuname ĞÕÃû from student;  »ò
-select tname as 'ĞÕÃû' from teacherinfo;  »ò
-select tname as ĞÕÃû from teacherinfo;
+--åˆ—åˆ«å
+select stuname å§“å from student;  æˆ–
+select tname as 'å§“å' from teacherinfo;  æˆ–
+select tname as å§“å from teacherinfo;
 
---±í±ğÃû
+--è¡¨åˆ«å
 select a.* from student a;
 
---²éÑ¯Ìõ¼ş
-> < = >= <=  <> ºÍ!=¶¼ÊÇ²»µÈÓÚ
+--æŸ¥è¯¢æ¡ä»¶
+> < = >= <=  <> å’Œ!=éƒ½æ˜¯ä¸ç­‰äº
 between 1 and 20
 not between 1 and 20
 
@@ -153,37 +153,37 @@ not  in (1,2)
 is null
 is not null
 
-''ºÍnullÊÇ²»Ò»ÑùµÄ¡£
+''å’Œnullæ˜¯ä¸ä¸€æ ·çš„ã€‚
 
 like 
 
-% ´ú±í0-nÈÎÒâ×Ö·û
-_ ´ú±íÒ»¸ö·ûºÅ
-select * from student where stuname like ¡®_ _ _ _¡¯; 
-µÈ¼ÛÓÚ
+% ä»£è¡¨0-nä»»æ„å­—ç¬¦
+_ ä»£è¡¨ä¸€ä¸ªç¬¦å·
+select * from student where stuname like â€˜_ _ _ _â€™; 
+ç­‰ä»·äº
 select * from student where length(stuname)=4;
 
---ÔÚMySqlÖĞ,Ê¹ÓÃdateĞÍÊ±,²»ÄÜÖ¸¶¨Ä¬ÈÏÖµ,Èç¹ûÏëÒªÊ¹ÓÃÄ¬ÈÏÈÕÆÚ¿ÉÒÔÊ¹ÓÃtimestamp(Ê±¼ä´Á)ÀàĞÍ:
+--åœ¨MySqlä¸­,ä½¿ç”¨dateå‹æ—¶,ä¸èƒ½æŒ‡å®šé»˜è®¤å€¼,å¦‚æœæƒ³è¦ä½¿ç”¨é»˜è®¤æ—¥æœŸå¯ä»¥ä½¿ç”¨timestamp(æ—¶é—´æˆ³)ç±»å‹:
 create table aa(id int primary key auto_increment,a timestamp default now());
 
---SQLÖĞµÄ³£ÓÃÄÚÖÃº¯Êı:max()¡¢min()¡¢sum()¡¢avg()¡¢count()¡¢length()¡¢now()
+--SQLä¸­çš„å¸¸ç”¨å†…ç½®å‡½æ•°:max()ã€min()ã€sum()ã€avg()ã€count()ã€length()ã€now()
 
 --select * from student where age = (select max(age) from student)
---ÍÆ¼öÊ¹ÓÃ:
+--æ¨èä½¿ç”¨:
 --select * from student where age in (select max(age) from student)
 
---²éÑ¯µÚÒ»ĞĞ¼ÇÂ¼
+--æŸ¥è¯¢ç¬¬ä¸€è¡Œè®°å½•
 select * from student order by age limit 0,1
---Ëæ»ú
+--éšæœº
 select * from student order by rand() desc limit 0,3
-×¢£ºmysqlÖĞÃ»ÓĞtopÓï¾ä;ËãÆ½¾ùÄêÁäÊ±£¬ÄêÁäÎª¿ÕµÄ²»²ÎÓëÆ½¾ù¡£
+æ³¨ï¼šmysqlä¸­æ²¡æœ‰topè¯­å¥;ç®—å¹³å‡å¹´é¾„æ—¶ï¼Œå¹´é¾„ä¸ºç©ºçš„ä¸å‚ä¸å¹³å‡ã€‚
 
---²»µÈ²éÑ¯
+--ä¸ç­‰æŸ¥è¯¢
 select * from crm_user where account !='admin';
-»ò
+æˆ–
 select * from crm_user where account <>'admin';
 
---Íâ¼ü¼¶ÁªÉ¾³ı
+--å¤–é”®çº§è”åˆ é™¤
 create database student default character set gbk;
 use student;
 create table stuinfo
@@ -197,7 +197,7 @@ create table couinfo
    id int primary key auto_increment,
    cname varchar(20) not null unique
 );
-/* ½¨Á¢ÁªºÏÖ÷¼ü */
+/* å»ºç«‹è”åˆä¸»é”® */
 /**
 create table scoinfo
 (
@@ -219,28 +219,28 @@ create table scoinfo
    foreign key(cid) references couinfo(id) on delete cascade
 );
 
---´´½¨ÊÓÍ¼
+--åˆ›å»ºè§†å›¾
 create view showstu
 as
 select stuinfo.*,couinfo.cname,scoinfo.score
 from stuinfo,couinfo,scoinfo
 where stuinfo.id = scoinfo.sid and couinfo.id=scoinfo.cid
-»ò£¨ÀûÓÃ±í±ğÃû£©
+æˆ–ï¼ˆåˆ©ç”¨è¡¨åˆ«åï¼‰
 create view stuinfo 
 as 
 select st.stuid,st.stuname,c.coursename,s.score 
 from student st,score s,course c 
 where st.stuid=s.stuid and c.courseid=s.courseid;
 
---²éÑ¯ÊÓÍ¼
+--æŸ¥è¯¢è§†å›¾
 select * from showstu;
 
---´æ´¢¹ı³Ì:´æ´¢¹ı³ÌµÄĞ§ÂÊ±È²éÑ¯Óï¾äÒª¸ßµÃ¶à¡£
---É¾³ı´æ´¢¹ı³Ì
+--å­˜å‚¨è¿‡ç¨‹:å­˜å‚¨è¿‡ç¨‹çš„æ•ˆç‡æ¯”æŸ¥è¯¢è¯­å¥è¦é«˜å¾—å¤šã€‚
+--åˆ é™¤å­˜å‚¨è¿‡ç¨‹
 drop procedure if exists st;
 drop procedure if exists stinsert;
 
-/*´´½¨Ò»¸ö²éÑ¯ĞÅÏ¢µÄ´æ´¢¹ı³Ì£¬ÎŞ²Î*/
+/*åˆ›å»ºä¸€ä¸ªæŸ¥è¯¢ä¿¡æ¯çš„å­˜å‚¨è¿‡ç¨‹ï¼Œæ— å‚*/
 delimiter //
 create procedure allstu()
 begin
@@ -248,10 +248,10 @@ begin
 end
 //
 delimiter ;
---µ÷ÓÃ
+--è°ƒç”¨
 call allstu()
 
-/*´´½¨Ìí¼ÓÑ§ÉúµÄ´æ´¢¹ı³Ì£¬ÊäÈë²ÎÊı*/
+/*åˆ›å»ºæ·»åŠ å­¦ç”Ÿçš„å­˜å‚¨è¿‡ç¨‹ï¼Œè¾“å…¥å‚æ•°*/
 delimiter //
 create procedure addstu(in xuehao varchar(6),in xingming varchar(10))
 begin 
@@ -259,10 +259,10 @@ begin
 end
 //
 
-/*Ö´ĞĞ´æ´¢¹ı³Ì*/
-call addstu('010','ÍõÇ¿')
+/*æ‰§è¡Œå­˜å‚¨è¿‡ç¨‹*/
+call addstu('010','ç‹å¼º')
 
-/*´´½¨Ò»¸öÍ³¼ÆÊıÁ¿µÄ´æ´¢¹ı³Ì£¬Êä³ö²ÎÊı*/
+/*åˆ›å»ºä¸€ä¸ªç»Ÿè®¡æ•°é‡çš„å­˜å‚¨è¿‡ç¨‹ï¼Œè¾“å‡ºå‚æ•°*/
 delimiter //
 create procedure countstu(out c int)
 begin 
@@ -270,10 +270,10 @@ begin
 end
 //
 
---Ö´ĞĞ
+--æ‰§è¡Œ
 call countstu(@a);
 
---½¨Á¢Ò»¸öÉ¾³ıÖ¸¶¨Ñ§ºÅµÄ´æ´¢¹ı³Ì
+--å»ºç«‹ä¸€ä¸ªåˆ é™¤æŒ‡å®šå­¦å·çš„å­˜å‚¨è¿‡ç¨‹
 delimiter //
 create procedure stdel(in sno char(4))
 begin
@@ -282,13 +282,13 @@ end
 //
 
 
---´¥·¢Æ÷:Ê¹ÓÃ´¥·¢Æ÷Ê±£¬ÏµÍ³»á×Ô¶¯²úÉúÁ½¸öÁÙÊ±±í£¬·Ö±ğÊÇNEW±íºÍOLD±í
---     ´¥·¢Æ÷ÀàĞÍ      new±í    old±í
+--è§¦å‘å™¨:ä½¿ç”¨è§¦å‘å™¨æ—¶ï¼Œç³»ç»Ÿä¼šè‡ªåŠ¨äº§ç”Ÿä¸¤ä¸ªä¸´æ—¶è¡¨ï¼Œåˆ†åˆ«æ˜¯NEWè¡¨å’ŒOLDè¡¨
+--     è§¦å‘å™¨ç±»å‹      newè¡¨    oldè¡¨
 --     insert          yes      no
 --     update          yes      yes
 --     delete          no       yes
 
---´´½¨Ò»¸öinsert´¥·¢Æ÷
+--åˆ›å»ºä¸€ä¸ªinsertè§¦å‘å™¨
 create trigger stut after insert
 on stuinfo for each row
 begin
@@ -302,5 +302,9 @@ begin
     insert into score(stuid,courseid) values(NEW.stuid,'K005');
 end
 //
+
+--æ˜¾ç¤ºæ­£åœ¨è¿è¡Œçš„çº¿ç¨‹
+show processlist;
+show full processlist;
 
 
