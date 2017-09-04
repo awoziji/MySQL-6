@@ -1,0 +1,37 @@
+
+1.添加PRIMARY KEY(主键索引) 
+ALTER TABLE `table_name` ADD PRIMARY KEY ( `column` ) 
+
+2.添加UNIQUE(唯一索引) 
+ALTER TABLE `table_name` ADD UNIQUE ( `column` ) 
+
+3.添加INDEX(普通索引) 
+ALTER TABLE `table_name` ADD INDEX index_name ( `column` ) 
+
+4.添加FULLTEXT(全文索引) 
+ALTER TABLE `table_name` ADD FULLTEXT ( `column`) 
+
+5.添加多列索引 
+ALTER TABLE `table_name` ADD INDEX index_name ( `column1`, `column2`, `column3` )
+
+
+--删除索引
+ALTER TABLE table_name DROP INDEX index_name 
+ALTER TABLE table_name DROP PRIMARY KEY 
+
+-------------------------------------------------------------------------------------------------------------------
+组合索引
+
+组合索引可以这样理解，比如 idx(a,b,c)，a、b、c都是排好序的，在任意一段a的下面b都是排好序的，任何一段b下面c都是排好序的。
+
+组合索引的生效原则是: 从前往后依次使用生效，如果中间某个索引没有使用，那么断点前面的索引部分起作用，断点后面的索引不会起
+作用。 
+
+比如:
+where a=3 and b=45 and c=5 .... 这种三个索引顺序使用中间没有断点，全部发挥作用;
+where a=3 and c=5 ...           这种情况下b就是断点，a发挥了效果，c没有效果;
+where b=3 and c=4 ...           这种情况下a就是断点，在a后面的索引都没有发挥作用，这种写法联合索引没有发挥任何效果;
+where b=45 and a=3 and c=5 .... 这个跟第一个一样，全部发挥作用，a、b、c只要用上了就行，跟写的顺序无关;
+where a=3 and b>7 and c=3 ...   a用到了，b也用到了，c没有用到，这个地方b是范围值，也算断点，只不过自身用到了索引;
+
+注意: idx(a,b,c) 和 idx(a,c,b) 是不一样的。
