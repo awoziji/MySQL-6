@@ -1,0 +1,20 @@
+
+1.insert into ... select ...
+
+insert into t1(col1, col2, col3)
+select col1, col2, col3 from t2
+where col1 = 0 and col2 = 4
+
+2.update
+
+update t1 a inner join t2 b
+set a.col1 = b.col1,
+    a.col2 = b.col2,
+    a.col3 = b.col3
+where a.col1 = b.col1 and b.col2 = 3
+
+或
+
+update t1 a inner join t2 b on a.col1 = b.col1 and b.col2 = 3
+SET a.col1 = b.col1,
+    a.col2 = b.col2
