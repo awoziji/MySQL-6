@@ -1,0 +1,14 @@
+
+
+delete from table where id = ?
+这条SQL可以正常执行。
+
+
+delete from table t where t.id = ？
+报错！
+Error : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server
+version for the right syntax to use near 't where t.id = 1' at line 1
+
+
+这是因为 MySQL 的语法限制，如果你指定了别名则需要在 delete 后说明这个别名，如：delete t from table t where t.id = ？
+或者干脆不要指定别名。
