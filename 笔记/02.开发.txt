@@ -1,19 +1,19 @@
---½¨Á¢Êı¾İ¿â
-create database Êı¾İ¿âÃû;
---±ê×¼Óï¾äÎª
+--å»ºç«‹æ•°æ®åº“
+create database æ•°æ®åº“å;
+--æ ‡å‡†è¯­å¥ä¸º
 create database if not exists huasoft character set gb2312;
-×¢£ºÊ¹ÓÃÕâÌõÓï¾äµÄÊ±ºòÈç¹ûÒÑ¾­ÓĞÁËÕâ¸öÊı¾İ¿â£¬ÄÇÃ´½«²»»áÔÙ´´½¨¿âÁË£¬²»»á¸²¸Ç¡£
---É¾³ıÊı¾İ¿â
-drop database Êı¾İ¿âÃû×Ó;
---ÏÔÊ¾½¨Á¢Êı¾İ¿âµÄ±ê×¼´úÂë
-show create database Êı¾İ¿âÃû;
---½¨Á¢ÌØÊâÊı¾İ¿â
+æ³¨ï¼šä½¿ç”¨è¿™æ¡è¯­å¥çš„æ—¶å€™å¦‚æœå·²ç»æœ‰äº†è¿™ä¸ªæ•°æ®åº“ï¼Œé‚£ä¹ˆå°†ä¸ä¼šå†åˆ›å»ºåº“äº†ï¼Œä¸ä¼šè¦†ç›–ã€‚
+--åˆ é™¤æ•°æ®åº“
+drop database æ•°æ®åº“åå­;
+--æ˜¾ç¤ºå»ºç«‹æ•°æ®åº“çš„æ ‡å‡†ä»£ç 
+show create database æ•°æ®åº“å;
+--å»ºç«‹ç‰¹æ®Šæ•°æ®åº“
 create database `database`;
---ÏÂ±ßÊÇsqlserverÓï¾ä
+--ä¸‹è¾¹æ˜¯sqlserverè¯­å¥
 create database [database];
---Ñ¡ÔñÊı¾İ¿â
+--é€‰æ‹©æ•°æ®åº“
 use huasoft;
---½¨Á¢±í
+--å»ºç«‹è¡¨
 create table student
 (
     id int,
@@ -21,103 +21,103 @@ create table student
     address varchar(100),
     primary key(id)
 );
---ÏÔÊ¾½¨±íµÄ¹æ·¶´úÂë
+--æ˜¾ç¤ºå»ºè¡¨çš„è§„èŒƒä»£ç 
 show create table student;
 
-ÊıÖµÀàĞÍ
-ÕûĞÍ
-bit[(M)] 
+æ•°å€¼ç±»å‹
+æ•´å‹
+bit[(M)]
 tinyint[(M)]
 bool,boolean = tinyint(1)
-smallint[(m)] 
+smallint[(m)]
 mediumint[(m)]
 int[(m)] = integer[(m)]
-bigint[(m)] 
-×¢£ºÀ¨ºÅÖĞµÄm²¢²»´ú±í¿ÉÒÔ´æ´¢ÊıÖµµÄ´óĞ¡£¬Ö»´ú±íÏÔÊ¾¿í¶È£¬×îºÃ²»ÒªËæÒâÉèÖÃ¡£
+bigint[(m)]
+æ³¨ï¼šæ‹¬å·ä¸­çš„må¹¶ä¸ä»£è¡¨å¯ä»¥å­˜å‚¨æ•°å€¼çš„å¤§å°ï¼Œåªä»£è¡¨æ˜¾ç¤ºå®½åº¦ï¼Œæœ€å¥½ä¸è¦éšæ„è®¾ç½®ã€‚
 
-Ğ¡ÊıÀàĞÍ£¨¸ß¾«¶È£©£º
+å°æ•°ç±»å‹ï¼ˆé«˜ç²¾åº¦ï¼‰ï¼š
 decimal(m,d)
 numeric(m,d)
-Àı:decimal(7,2)±íÊ¾7Î»Êı×Ö£¬ÆäÖĞĞ¡ÊıÕ¼2Î»¡£
+ä¾‹:decimal(7,2)è¡¨ç¤º7ä½æ•°å­—ï¼Œå…¶ä¸­å°æ•°å 2ä½ã€‚
 
-ÈÕÆÚ
+æ—¥æœŸ
 datetime
-date --> Ö»°üÀ¨ÈÕÆÚ£¬²»°üÀ¨Ê±¼ä£»
+date --> åªåŒ…æ‹¬æ—¥æœŸï¼Œä¸åŒ…æ‹¬æ—¶é—´ï¼›
 time
 timestamp
 
-¶ş½øÖÆ
+äºŒè¿›åˆ¶
 blob
 
-×Ö·û´®ÀàĞÍ
-char(m) ¶¨³¤ m´ú±í×Ö½ÚÊı  Ò»¸öºº×ÖÕ¼Á½¸ö×Ö½Ú  
-varchar(m)  m´ú±í×Ö½ÚÊı
+å­—ç¬¦ä¸²ç±»å‹
+char(m) å®šé•¿ mä»£è¡¨å­—èŠ‚æ•°  ä¸€ä¸ªæ±‰å­—å ä¸¤ä¸ªå­—èŠ‚
+varchar(m)  mä»£è¡¨å­—èŠ‚æ•°
 text
-char(10)Óëvarchar(10)µÄÇø±ğ£ºËüÃÇÁ½¸ö¶¼ÊÇ×î¶àÄÜ´æ10¸ö×Ö½Ú£¬µ«ÊÇchar(10)ÊÇ¶¨³¤£¬Èç¹û¶¼Ö»´æ1¸ö×Ö½ÚµÄ»°£¬
-                             char(10)ÈÔÈ»Õ¼10¸ö×Ö½Ú£¬¶øvarchar(10)ÔòÖ»Õ¼1¸ö×Ö½Ú¡£
+char(10)ä¸varchar(10)çš„åŒºåˆ«ï¼šå®ƒä»¬ä¸¤ä¸ªéƒ½æ˜¯æœ€å¤šèƒ½å­˜10ä¸ªå­—èŠ‚ï¼Œä½†æ˜¯char(10)æ˜¯å®šé•¿ï¼Œå¦‚æœéƒ½åªå­˜1ä¸ªå­—èŠ‚çš„è¯ï¼Œ
+                             char(10)ä»ç„¶å 10ä¸ªå­—èŠ‚ï¼Œè€Œvarchar(10)åˆ™åªå 1ä¸ªå­—èŠ‚ã€‚
 
 
---ĞŞ¸Ä±íÃû£¨½«t±í¸ÄÎªteacher£©
+--ä¿®æ”¹è¡¨åï¼ˆå°†tè¡¨æ”¹ä¸ºteacherï¼‰
 rename table t to teacher
 
---ĞŞ¸ÄÁĞÃû¼°Êı¾İÀàĞÍ£¨½«tÁĞ¸ÄÎªid£¬Êı¾İÀàĞÍÉèÖÃÎªchar£©
-alter table teacher change t id char(10) 
---ĞŞ¸ÄÁĞµÄÊı¾İÀàĞÍ£¨½«aÁĞ¸ÄÎªvarcharĞÍ£©
+--ä¿®æ”¹åˆ—ååŠæ•°æ®ç±»å‹ï¼ˆå°†tåˆ—æ”¹ä¸ºidï¼Œæ•°æ®ç±»å‹è®¾ç½®ä¸ºcharï¼‰
+alter table teacher change t id char(10)
+--ä¿®æ”¹åˆ—çš„æ•°æ®ç±»å‹ï¼ˆå°†aåˆ—æ”¹ä¸ºvarcharå‹ï¼‰
 alter table teacher modify a vachar(10)
-×¢£ºchange¿ÉÍ¬Ê±ĞŞ¸ÄÁĞÃûºÍÊı¾İÀàĞÍ£¬modifyÖ»ÄÜĞŞ¸ÄÊı¾İÀàĞÍ¡£
+æ³¨ï¼šchangeå¯åŒæ—¶ä¿®æ”¹åˆ—åå’Œæ•°æ®ç±»å‹ï¼Œmodifyåªèƒ½ä¿®æ”¹æ•°æ®ç±»å‹ã€‚
 
---Ôö¼ÓÁĞ£¨ÔÚtableÁĞÖĞÔö¼ÓageÁĞ£¬ÀàĞÍÎªtinyint£©
+--å¢åŠ åˆ—ï¼ˆåœ¨tableåˆ—ä¸­å¢åŠ ageåˆ—ï¼Œç±»å‹ä¸ºtinyintï¼‰
 Alter table teacher add age tinyint
---Í¬Ê±Ôö¼Ó¶àÁĞ
+--åŒæ—¶å¢åŠ å¤šåˆ—
 alter table teacherinfo add(tname varchar(10),tage tinyint);
 
---É¾³ıÁĞ
+--åˆ é™¤åˆ—
 Alter table teacher drop age
 -
--ÉèÖÃÖ÷¼ü PK
+-è®¾ç½®ä¸»é”® PK
 Alter table teacher add constraint primary key(id)
---É¾³ıÖ÷¼ü
+--åˆ é™¤ä¸»é”®
 Alter table teacher drop primary key
 
---²é¿´±í½á¹¹
+--æŸ¥çœ‹è¡¨ç»“æ„
 Desc teacher
 
-/*½¨Á¢ÀÏÊ¦Ö°³Æ±í£¬idÎªÖ÷¼ü£¬ÇÒ×ÔÔö*/
+/*å»ºç«‹è€å¸ˆèŒç§°è¡¨ï¼Œidä¸ºä¸»é”®ï¼Œä¸”è‡ªå¢*/
 create table t(
     id     int auto_increment primary key,
     name   varchar(10)
 );
 
---½¨Á¢Ò»¸öÍâ¼ü FK
+--å»ºç«‹ä¸€ä¸ªå¤–é”® FK
 alter table teacher add constraint foreign key(tid) references t(id);
 
---½¨Á¢Î¨Ò»Ô¼Êø
+--å»ºç«‹å”¯ä¸€çº¦æŸ
  alter table teacher add [constraint] unique (name);
- 
---½á¹ûÉ¾³ıËùÓĞ¼ÇÂ¼
-delete from student;   £¨ÖğÌõÉ¾³ı£¬Èç¹ûÈ«²¿É¾³ıµÄ»°£¬Ğ§ÂÊÓĞµãÂı£©
-¿ÉÒÔÕâÑù: delete from stuinfo where 1=1;(Ò»ÏÂ×ÓÈ«²¿É¾³ı)
-»ò
+
+--ç»“æœåˆ é™¤æ‰€æœ‰è®°å½•
+delete from student;   ï¼ˆé€æ¡åˆ é™¤ï¼Œå¦‚æœå…¨éƒ¨åˆ é™¤çš„è¯ï¼Œæ•ˆç‡æœ‰ç‚¹æ…¢ï¼‰
+å¯ä»¥è¿™æ ·: delete from stuinfo where 1=1;(ä¸€ä¸‹å­å…¨éƒ¨åˆ é™¤)
+æˆ–
 truncate table student;
 
-insert into  Ôö
-delete     É¾
-update     ¸Ä
-select     ²é
+insert into  å¢
+delete     åˆ 
+update     æ”¹
+select     æŸ¥
 
---²éÑ¯Óï¾ä
---ÁĞ±ğÃû
-select stuname ĞÕÃû from student;
-»ò
-select tname as 'ĞÕÃû' from teacherinfo;
-»ò
-select tname as ĞÕÃû from teacherinfo;
+--æŸ¥è¯¢è¯­å¥
+--åˆ—åˆ«å
+select stuname å§“å from student;
+æˆ–
+select tname as 'å§“å' from teacherinfo;
+æˆ–
+select tname as å§“å from teacherinfo;
 
---±í±ğÃû
+--è¡¨åˆ«å
 select a.* from student a;
 
---²éÑ¯Ìõ¼ş
-> < = >= <=  <> ºÍ!=¶¼ÊÇ²»µÈÓÚ
+--æŸ¥è¯¢æ¡ä»¶
+> < = >= <=  <> å’Œ!=éƒ½æ˜¯ä¸ç­‰äº
 between 1 and 20
 not between 1 and 20
 
@@ -127,26 +127,26 @@ not  in (1,2)
 is null
 is not null
 
-''ºÍnullÊÇ²»Ò»ÑùµÄ¡£
+''å’Œnullæ˜¯ä¸ä¸€æ ·çš„ã€‚
 
-like 
+like
 
-% ´ú±í0-nÈÎÒâ×Ö·û
-_ ´ú±íÒ»¸ö·ûºÅ
-Select * from student where stuname like ¡®_ _ _ _¡¯
+% ä»£è¡¨0-nä»»æ„å­—ç¬¦
+_ ä»£è¡¨ä¸€ä¸ªç¬¦å·
+Select * from student where stuname like â€˜_ _ _ _â€™
 Select * from student where length(stuname)=4;
 
-ÔÚMySqlÖĞ£¬Ê¹ÓÃdateĞÍÊ±£¬²»ÄÜÖ¸¶¨Ä¬ÈÏÖµ£º
---ÕâÊÇ´íÎóµÄ
+åœ¨MySqlä¸­ï¼Œä½¿ç”¨dateå‹æ—¶ï¼Œä¸èƒ½æŒ‡å®šé»˜è®¤å€¼ï¼š
+--è¿™æ˜¯é”™è¯¯çš„
 CREATE TABLE aa(a1 DATE DEFAULT NOW(),a2 VARCHAR(6))
---ÕâÊÇÕıÈ·µÄ
+--è¿™æ˜¯æ­£ç¡®çš„
 CREATE TABLE aa(a1 DATE,a2 VARCHAR(6))
-INSERT INTO aa VALUES('2011-3-11 15:08:33','ÕÅÈı')
---ÏëÒªÊ¹ÓÃÄ¬ÈÏÈÕÆÚµÄ»°
+INSERT INTO aa VALUES('2011-3-11 15:08:33','å¼ ä¸‰')
+--æƒ³è¦ä½¿ç”¨é»˜è®¤æ—¥æœŸçš„è¯
 CREATE TABLE aa(a1 TIMESTAMP DEFAULT NOW(),a2 VARCHAR(10))
---²åÈëÊ±£¬²»½øĞĞÉèÖÃ£¬²é³öÀ´µÄ¾ÍÊÇµ±Ê±µÄÊ±¼ä
-INSERT INTO aa(a2) VALUES('ÕÅÈı')
-/* SQLÖĞµÄ³£ÓÃÄÚÖÃº¯Êı
+--æ’å…¥æ—¶ï¼Œä¸è¿›è¡Œè®¾ç½®ï¼ŒæŸ¥å‡ºæ¥çš„å°±æ˜¯å½“æ—¶çš„æ—¶é—´
+INSERT INTO aa(a2) VALUES('å¼ ä¸‰')
+/* SQLä¸­çš„å¸¸ç”¨å†…ç½®å‡½æ•°
 max()
 min()
 sum()
@@ -154,53 +154,53 @@ avg()
 count()
 */
 SELECT * FROM student WHERE age=(SELECT MAX(age) FROM student)
-ÍÆ¼öÊ¹ÓÃ:
+æ¨èä½¿ç”¨:
 SELECT * FROM student WHERE age in (SELECT MAX(age) FROM student)
---²éÑ¯µÚÒ»ĞĞ¼ÇÂ¼
+--æŸ¥è¯¢ç¬¬ä¸€è¡Œè®°å½•
 SELECT * FROM studnet ORDER BY age LIMIT 0,1
 SELECT * FROM aa ORDER BY a1 DESC  LIMIT 0,3
 SELECT * FROM aa ORDER BY RAND() DESC LIMIT 0,3
-×¢£ºmysqlÖĞÃ»ÓĞtopÓï¾ä¡£
-    ËãÆ½¾ùÄêÁäÊ±£¬ÄêÁäÎª¿ÕµÄ²»²ÎÓëÆ½¾ù¡£
+æ³¨ï¼šmysqlä¸­æ²¡æœ‰topè¯­å¥ã€‚
+    ç®—å¹³å‡å¹´é¾„æ—¶ï¼Œå¹´é¾„ä¸ºç©ºçš„ä¸å‚ä¸å¹³å‡ã€‚
 
-ÊÓÍ¼£ºĞéÄâ±í£¬¿É¼ò»¯´úÂë
-ÊÓÍ¼»á½µµÍĞ§ÂÊ£¨±È²éÑ¯Óï¾äĞ§ÂÊµÍ£©£¬ÓĞĞ©´óĞÍÊı¾İ¿â²»½¨ÒéÊ¹ÓÃÊÓÍ¼¡£
+è§†å›¾ï¼šè™šæ‹Ÿè¡¨ï¼Œå¯ç®€åŒ–ä»£ç 
+è§†å›¾ä¼šé™ä½æ•ˆç‡ï¼ˆæ¯”æŸ¥è¯¢è¯­å¥æ•ˆç‡ä½ï¼‰ï¼Œæœ‰äº›å¤§å‹æ•°æ®åº“ä¸å»ºè®®ä½¿ç”¨è§†å›¾ã€‚
 
-²éÑ¯Ñ§ÉúµÄÑ§ºÅ£¬ĞÕÃû ¿Î³Ì ¼°³É¼¨¡£
---´´½¨ÊÓÍ¼
+æŸ¥è¯¢å­¦ç”Ÿçš„å­¦å·ï¼Œå§“å è¯¾ç¨‹ åŠæˆç»©ã€‚
+--åˆ›å»ºè§†å›¾
 CREATE VIEW stuinfo
 AS
-SELECT student.*,course.cName,score.score 
+SELECT student.*,course.cName,score.score
 FROM student,course,score
 WHERE student.sNum=score.sNum AND course.cID=score.cID
-»ò£¨ÀûÓÃ±í±ğÃû£©
-create view stuinfo 
-as 
-select st.stuid,st.stuname,c.coursename,s.score 
-from student st,score s,course c 
+æˆ–ï¼ˆåˆ©ç”¨è¡¨åˆ«åï¼‰
+create view stuinfo
+as
+select st.stuid,st.stuname,c.coursename,s.score
+from student st,score s,course c
 where st.stuid=s.stuid and c.courseid=s.courseid;
 
---²éÑ¯ÊÓÍ¼
+--æŸ¥è¯¢è§†å›¾
 select * from stuinfo;
 
-´æ´¢¹ı³Ì£º
-´æ´¢¹ı³ÌµÄĞ§ÂÊ±È²éÑ¯Óï¾äÒª¸ßµÃ¶à¡£
+å­˜å‚¨è¿‡ç¨‹ï¼š
+å­˜å‚¨è¿‡ç¨‹çš„æ•ˆç‡æ¯”æŸ¥è¯¢è¯­å¥è¦é«˜å¾—å¤šã€‚
 
---É¾³ı´æ´¢¹ı³Ì
+--åˆ é™¤å­˜å‚¨è¿‡ç¨‹
 drop procedure if exists st;
 drop procedure if exists stinsert;
 
-/*´´½¨Ò»¸ö²éÑ¯ĞÅÏ¢µÄ´æ´¢¹ı³Ì£¬ÎŞ²Î*/
+/*åˆ›å»ºä¸€ä¸ªæŸ¥è¯¢ä¿¡æ¯çš„å­˜å‚¨è¿‡ç¨‹ï¼Œæ— å‚*/
 DELIMITER //
 CREATE PROCEDURE allstu()
-BEGIN 
+BEGIN
    SELECT * FROM stuinfo;
 END
 //
---µ÷ÓÃ
+--è°ƒç”¨
 CALL allstu()
 
-/*´´½¨Ìí¼ÓÑ§ÉúµÄ´æ´¢¹ı³Ì£¬ÊäÈë²ÎÊı*/
+/*åˆ›å»ºæ·»åŠ å­¦ç”Ÿçš„å­˜å‚¨è¿‡ç¨‹ï¼Œè¾“å…¥å‚æ•°*/
 DELIMITER //
 CREATE PROCEDURE addstu(IN num VARCHAR(6),IN nam VARCHAR(6))
 BEGIN
@@ -208,10 +208,10 @@ BEGIN
 END
 //
 
-/*Ö´ĞĞ´æ´¢¹ı³Ì*/
-CALL addstu('010','ÍõÇ¿')
+/*æ‰§è¡Œå­˜å‚¨è¿‡ç¨‹*/
+CALL addstu('010','ç‹å¼º')
 
-/*´´½¨Ò»¸öÍ³¼ÆÊıÁ¿µÄ´æ´¢¹ı³Ì£¬Êä³ö²ÎÊı*/
+/*åˆ›å»ºä¸€ä¸ªç»Ÿè®¡æ•°é‡çš„å­˜å‚¨è¿‡ç¨‹ï¼Œè¾“å‡ºå‚æ•°*/
 DELIMITER //
 CREATE PROCEDURE countstu(OUT c INT)
 BEGIN
@@ -220,7 +220,7 @@ END
 //
 CALL countstu(@a);
 
---½¨Á¢Ò»¸öÉ¾³ıÖ¸¶¨Ñ§ºÅµÄ´æ´¢¹ı³Ì
+--å»ºç«‹ä¸€ä¸ªåˆ é™¤æŒ‡å®šå­¦å·çš„å­˜å‚¨è¿‡ç¨‹
 create procedure stdel(in sno char(4))
 begin
     delete from student where stuid=sno;
@@ -228,9 +228,9 @@ end
 //
 
 
-´¥·¢Æ÷
---Ê¹ÓÃ´¥·¢Æ÷Ê±£¬ÏµÍ³»á×Ô¶¯²úÉúÁ½¸öÁÙÊ±±í£¬·Ö±ğÊÇNEWºÍ OLD
---     ´¥·¢Æ÷ÀàĞÍ    new   old
+è§¦å‘å™¨
+--ä½¿ç”¨è§¦å‘å™¨æ—¶ï¼Œç³»ç»Ÿä¼šè‡ªåŠ¨äº§ç”Ÿä¸¤ä¸ªä¸´æ—¶è¡¨ï¼Œåˆ†åˆ«æ˜¯NEWå’Œ OLD
+--     è§¦å‘å™¨ç±»å‹    new   old
 --     insert          yes    no
 --     update         yes    yes
 --     delete          no    yes
@@ -253,31 +253,29 @@ end
 DELIMITER //
 CREATE TRIGGER trig_before_delete_user BEFORE DELETE ON sys_user FOR EACH ROW
 BEGIN
-    /*É¾³ı¸ÃÓÃ»§ĞÅÏ¢*/
+    /*åˆ é™¤è¯¥ç”¨æˆ·ä¿¡æ¯*/
     DELETE FROM sys_user_info WHERE yhbh = old.yhbh;
-    /*É¾³ıÓÃ»§µÄ½ÇÉ«*/
+    /*åˆ é™¤ç”¨æˆ·çš„è§’è‰²*/
     DELETE FROM sys_user_role WHERE yhbh = old.yhbh;
-    /*É¾³ıÓÃ»§¹ØÁªµÄ¿¨Æ¬¼ÇÂ¼*/
+    /*åˆ é™¤ç”¨æˆ·å…³è”çš„å¡ç‰‡è®°å½•*/
     DELETE FROM mx_kpjl WHERE yhbh = old.yhbh;
-    /*É¾³ıÓÃ»§¹ØÁªµÄ½»Ò×¼ÇÂ¼*/
+    /*åˆ é™¤ç”¨æˆ·å…³è”çš„äº¤æ˜“è®°å½•*/
     DELETE FROM mx_jyjl WHERE yhbh = old.yhbh;
-    /*É¾³ıÓÃ»§¹ØÁªµÄÌáÏÖ¼ÇÂ¼*/
+    /*åˆ é™¤ç”¨æˆ·å…³è”çš„æç°è®°å½•*/
     DELETE FROM mx_txjl WHERE yhbh = old.yhbh;
-    /*É¾³ıÓÃ»§¹ØÁªµÄ»¹¿î¼ÇÂ¼*/
+    /*åˆ é™¤ç”¨æˆ·å…³è”çš„è¿˜æ¬¾è®°å½•*/
     DELETE FROM mx_hkjl WHERE yhbh = old.yhbh;
-    /*É¾³ıÓÃ»§¹ØÁªµÄÊ±¹âÖá*/
+    /*åˆ é™¤ç”¨æˆ·å…³è”çš„æ—¶å…‰è½´*/
     DELETE FROM mx_sgz WHERE yhbh = old.yhbh;
 END
-//   
+//
 DELIMITER ;
 
-É¾³ıÊı¾İµÄÁ½ÖÖ·½Ê½£º
-truncate ÊÇ²Ù×÷È«²¿£¬²»»áÆô¶¯´¥·¢Æ÷
-delete  ÊÇÖğÌõ²Ù×÷£¬»áÆô¶¯´¥·¢Æ÷
+åˆ é™¤æ•°æ®çš„ä¸¤ç§æ–¹å¼ï¼š
+truncate æ˜¯æ“ä½œå…¨éƒ¨ï¼Œä¸ä¼šå¯åŠ¨è§¦å‘å™¨
+delete  æ˜¯é€æ¡æ“ä½œï¼Œä¼šå¯åŠ¨è§¦å‘å™¨
 
-MySqlÊı¾İ¿âµÄ¼ÓÃÜËã·¨£º
+MySqlæ•°æ®åº“çš„åŠ å¯†ç®—æ³•ï¼š
  1) select password('admin');
  2) select md5('admin');
- 3) select sha('admin');»òselect sha1('admin');
-
-
+ 3) select sha('admin');æˆ–select sha1('admin');
